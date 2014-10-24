@@ -26,7 +26,7 @@ public:
 	void open(char *);
 	void close();
 
-	int readIntArray(int *, int);
+	unsigned int readIntArray(int *, int);
 
 private:
 	void cpyFileName(char *);

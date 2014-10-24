@@ -14,6 +14,8 @@ using namespace std;
 
 void testReadIntArray();
 void testMerge();
+void testMergeSort();
+void testReadIntArrayMergeSort();
 
 int main() {
 
@@ -40,17 +42,50 @@ void testMerge() {
 	int arrL[] = { 1, 2, 4 };
 	int arrR[] = { 3, 5, 6 };
 	int arr[6];
+	int sizeL = sizeof(arrL) / sizeof(int);
+	int sizeR = sizeof(arrR) / sizeof(int);
+	int size = sizeL + sizeR;
 
-	memset(arr, 0, 6 * sizeof(int));
+	memset(arr, 0, size * sizeof(int));
 
-	int invCount = merge(arrL, 3, arrR, 3, arr, 6, SORT_ASCEND);
+	int invCount = merge(arrL, sizeL, arrR, sizeR, arr, size, SORT_ASCEND);
 
 	cout << "merged array: ";
-	for (int i = 0; i < 6; i++) {
+	for (int i = 0; i < size; i++) {
 		cout << arr[i] << " ";
 	}
 
 	cout << endl;
 
+	cout << "inversion count: " << invCount << endl;
+}
+
+void testMergeSort() {
+	int arr[] = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+	int size = sizeof(arr)/sizeof(int);
+	int invCount = mergeSort(arr, size, SORT_ASCEND);
+
+	cout << "sorted array: ";
+	for (int i = 0; i < size; i++) {
+		cout << arr[i] << " ";
+	}
+
+	cout << endl;
+
+	cout << "inversion count: " << invCount << endl;
+}
+
+void testReadIntArrayMergeSort() {
+	In fileIn("IntegerArray.txt");
+	int arr[100000];
+
+	memset(arr, 0, 100000 * sizeof(int));
+
+	unsigned int intCount = fileIn.readIntArray(arr, 100000);
+	fileIn.close();
+
+	unsigned long int invCount = mergeSort(arr, 100000, SORT_ASCEND);
+
+	cout << "total integers read: " << intCount << endl;
 	cout << "inversion count: " << invCount << endl;
 }
