@@ -33,4 +33,5 @@
 *.opensdf
 *.sdf
 *.sln
+*/Debug/*
 Debug/*

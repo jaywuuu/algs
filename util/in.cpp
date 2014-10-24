@@ -49,7 +49,9 @@ void In::close() {
 	delete [] this->fileName;
 }
 
-/* Read in integers from file as an array line by line. */
+/* Read in integers from file as an array line by line. 
+*  Returns IN_FILE_NOT_OPEN if file is not open.
+*/
 int In::readIntArray(int *arrOut, int size) {
 	int intCount = 0;
 	char line[100]; // temporary for now until I figure out how to correctly 
@@ -63,6 +65,7 @@ int In::readIntArray(int *arrOut, int size) {
 			intCount++;
 		}
 	}
+	else intCount = IN_FILE_NOT_OPEN;
 
 	return intCount;
 }

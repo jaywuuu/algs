@@ -10,6 +10,10 @@
 
 #include <fstream>
 
+enum IN_ERR_CODE {
+	IN_FILE_NOT_OPEN = -1
+};
+
 class In {
 public:
 	char *fileName;
