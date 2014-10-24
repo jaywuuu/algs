@@ -10,8 +10,8 @@
 * sorts according to the function pointer passed in.  
 * Use SORT_ASCENDING or SORT_DESCENDING defined in sort.h
 */
-unsigned long int mergeSort(int *arr, int arrSize, bool (*compare)(int, int)) {
-	int invCount = 0;
+uint64 mergeSort(int *arr, int arrSize, bool(*compare)(int, int)) {
+	uint64 invCount = 0;
 	int *aux = new int[arrSize];
 	int mid = arrSize / 2;
 	int sizeL = mid;
@@ -37,12 +37,12 @@ unsigned long int mergeSort(int *arr, int arrSize, bool (*compare)(int, int)) {
 /* merges two arrays into one 
 * Uses a function pointer to determine how to compare the items for ascending
 * or descending order.  Returns the number of inversions. */
-unsigned long int merge(
+uint64 merge(
 	int *arrL, int sizeL,
 	int *arrR, int sizeR,
 	int *arrOut, int sizeOut,
 	bool (*compare)(int, int)) {
-	int invCount = 0;	// keep track of number of inversions.
+	uint64 invCount = 0;	// keep track of number of inversions.
 	int i = 0, j = 0;
 
 	for (int k = 0; k < sizeOut; k++) {

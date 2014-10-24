@@ -9,6 +9,7 @@
 #include "util/in.h"
 #include "sorting/mergesort.h"
 #include "sorting/sort.h"
+#include "types.h"
 
 using namespace std;
 
@@ -81,10 +82,10 @@ void testReadIntArrayMergeSort() {
 
 	memset(arr, 0, 100000 * sizeof(int));
 
-	unsigned int intCount = fileIn.readIntArray(arr, 100000);
+	uint32 intCount = fileIn.readIntArray(arr, 100000);
 	fileIn.close();
 
-	unsigned long int invCount = mergeSort(arr, 100000, SORT_ASCEND);
+	uint64 invCount = mergeSort(arr, 100000, SORT_ASCEND);
 
 	cout << "total integers read: " << intCount << endl;
 	cout << "inversion count: " << invCount << endl;
