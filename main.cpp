@@ -94,7 +94,7 @@ void testReadIntArrayMergeSort() {
 }
 
 void testHighLow() {
-	uint16 arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+	uint16 arr[] = { 9, 2, 3, 4, 5, 6, 7, 8, 1, 10 };
 	uint16 size = sizeof(arr) / sizeof(uint16);
 
 	cout << "before: ";

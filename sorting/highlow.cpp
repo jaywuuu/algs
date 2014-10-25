@@ -14,16 +14,18 @@ void highlow(uint16 *arr, uint16 arraySize) {
 	if (arraySize == 0) return;
 	bool state = (arr[0] > arr[1]);
 
-	for (uint16 i = 0; i < arraySize-1; i++) {
-		if (state) {
-			if (arr[i] > arr[i + 1]) {
-				swap(&arr[i], &arr[i + 1]);
+	if (!state) swap(&arr[0], &arr[1]);
+
+	for (uint16 i = 2; i < arraySize-1; i++) {
+		if (state) { // falling state
+			if (arr[i] < arr[i - 1]) {
+				swap(&arr[i], &arr[i - 1]);
 			}
 			state = false;
 		}
-		else { // state < 0
-			if (arr[i] < arr[i + 1]) {
-				swap(&arr[i], &arr[i + 1]);
+		else { // rising state
+			if (arr[i] > arr[i - 1]) {
+				swap(&arr[i], &arr[i - 1]);
 			}
 			state = true;
 		}
