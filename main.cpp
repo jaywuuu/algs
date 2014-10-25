@@ -10,6 +10,7 @@
 #include "sorting/mergesort.h"
 #include "sorting/sort.h"
 #include "types.h"
+#include "sorting/highlow.h"
 
 using namespace std;
 
@@ -17,9 +18,10 @@ void testReadIntArray();
 void testMerge();
 void testMergeSort();
 void testReadIntArrayMergeSort();
+void testHighLow();
 
 int main() {
-
+	testHighLow();
 	return 0;
 }
 
@@ -89,4 +91,19 @@ void testReadIntArrayMergeSort() {
 
 	cout << "total integers read: " << intCount << endl;
 	cout << "inversion count: " << invCount << endl;
+}
+
+void testHighLow() {
+	uint16 arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+	uint16 size = sizeof(arr) / sizeof(uint16);
+
+	cout << "before: ";
+	for (uint16 i = 0; i < size; i++) cout << arr[i] << " ";
+	cout << endl;
+
+	highlow(arr, size);
+
+	cout << "after: ";
+	for (uint16 i = 0; i < size; i++) cout << arr[i] << " ";
+	cout << endl;
 }
