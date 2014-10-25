@@ -49,7 +49,7 @@ void testMerge() {
 
 	memset(arr, 0, size * sizeof(int));
 
-	int invCount = merge(arrL, sizeL, arrR, sizeR, arr, size, SORT_ASCEND);
+	uint64 invCount = merge(arrL, sizeL, arrR, sizeR, arr, size, SORT_ASCEND);
 
 	cout << "merged array: ";
 	for (int i = 0; i < size; i++) {
@@ -64,7 +64,7 @@ void testMerge() {
 void testMergeSort() {
 	int arr[] = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
 	int size = sizeof(arr)/sizeof(int);
-	int invCount = mergeSort(arr, size, SORT_ASCEND);
+	uint64 invCount = mergeSort(arr, size, SORT_ASCEND);
 
 	cout << "sorted array: ";
 	for (int i = 0; i < size; i++) {
