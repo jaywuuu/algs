@@ -28,10 +28,9 @@
 *.app
 
 # Visual studio project files
-*.vcxproj*
 *.suo
 *.opensdf
 *.sdf
-*.sln
 */Debug/*
 Debug/*
+*.user
