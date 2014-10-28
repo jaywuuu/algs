@@ -12,9 +12,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="In.h" />
+    <ClInclude Include="random.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="in.cpp" />
+    <ClCompile Include="random.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F3226139-7950-4BD1-BC16-A6DBBA38DF3A}</ProjectGuid>

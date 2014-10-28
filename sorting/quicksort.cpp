@@ -5,6 +5,7 @@
 */
 
 #include "quicksort.h"
+#include "../util/random.h"
 
 /* Standard 2-partition Quick sort.  
 *  Shuffle array, choose pivot, partition, then finish up. 
@@ -13,6 +14,7 @@ template < typename ttype >
 void quickSort(ttype *arr, int arrSize) {
 	uint32 pivot = 0;
 	// TODO: implement shuffle and looking for a pivot
+	shuffle(arr, arrSize);
 
 	qsort(arr, arrSize, pivot);
 }

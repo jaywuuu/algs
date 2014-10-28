@@ -12,6 +12,7 @@
 #include "types.h"
 #include "sorting/highlow.h"
 #include "sorting/quicksort.h"
+#include "util/random.h"
 
 using namespace std;
 
@@ -27,9 +28,11 @@ int testMergeSort();
 int testReadIntArrayMergeSort();
 int testHighLow();
 int testQuickSort();
+int testRandomShuffle();
 
 int main() {
 	runUnitTests();
+	//testRandomShuffle();
 	return 0;
 }
 
@@ -158,13 +161,50 @@ int testHighLow() {
 
 int testQuickSort() {
 	int arr[] = { 10, 4, 2, 7, 5, 6, 1, 3, 8, 9 };
-	int size = sizeof(arr) / sizeof(uint16);
+	int size = sizeof(arr) / sizeof(int);
 	
 	quickSort(arr, size);
 
 	for (int i = 0; i < size; i++) {
 		if (arr[i] != i + 1) return FAIL;
 	}
+
+	return OK;
+}
+
+int testRandomShuffle() {
+	int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+	int size = sizeof(arr) / sizeof(int);
+
+	cout << "array: ";
+	for (int i = 0; i < size; i++) {
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+
+	shuffle(arr, size);
+
+	cout << "shuffle: ";
+	for (int i = 0; i < size; i++) {
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+
+	shuffle(arr, size);
+
+	cout << "shuffle: ";
+	for (int i = 0; i < size; i++) {
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+
+	shuffle(arr, size);
+
+	cout << "shuffle: ";
+	for (int i = 0; i < size; i++) {
+		cout << arr[i] << " ";
+	}
+	cout << endl;
 
 	return OK;
 }
