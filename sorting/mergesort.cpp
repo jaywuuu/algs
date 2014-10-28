@@ -5,14 +5,16 @@
 
 #include <cstring>
 #include "mergesort.h"
+#include "sort.h"
 
 /* returns the number of inversions 
 * sorts according to the function pointer passed in.  
 * Use SORT_ASCENDING or SORT_DESCENDING defined in sort.h
 */
-uint64 mergeSort(int *arr, int arrSize, bool(*compare)(int, int)) {
+template < typename ttype >
+uint64 mergeSort(ttype *arr, int arrSize, bool(*compare)(ttype, ttype)) {
 	uint64 invCount = 0;
-	int *aux = new int[arrSize];
+	ttype *aux = new int[arrSize];
 	int mid = arrSize / 2;
 	int sizeL = mid;
 	int sizeR = arrSize - mid;
@@ -37,11 +39,12 @@ uint64 mergeSort(int *arr, int arrSize, bool(*compare)(int, int)) {
 /* merges two arrays into one 
 * Uses a function pointer to determine how to compare the items for ascending
 * or descending order.  Returns the number of inversions. */
+template < typename ttype >
 uint64 merge(
-	int *arrL, int sizeL,
-	int *arrR, int sizeR,
-	int *arrOut, int sizeOut,
-	bool (*compare)(int, int)) {
+	ttype *arrL, int sizeL,
+	ttype *arrR, int sizeR,
+	ttype *arrOut, int sizeOut,
+	bool(*compare)(ttype, ttype)) {
 	uint64 invCount = 0;	// keep track of number of inversions.
 	int i = 0, j = 0;
 
@@ -63,3 +66,11 @@ uint64 merge(
 	return invCount;
 }
 
+/* dummy function to fix linking caused by using generics.*/
+void dummy_mergesort() {
+	int arr1[] = { 1 };
+	int arr2[] = { 2 };
+	int arr3[] = { 3 };
+	mergeSort(arr1, 1, SORT_ASCEND);
+	merge(arr1, 1, arr2, 1, arr3, 1, SORT_ASCEND);
+}

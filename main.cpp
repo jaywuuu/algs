@@ -136,7 +136,7 @@ int testHighLow() {
 
 	highlow(arr, size);
 
-	for (int i = 0; i < size-1; i++) {
+	for (uint16 i = 0; i < size - 1; i++) {
 		if (state) {
 			if (arr[i] < arr[i + 1]) return FAIL;
 		}

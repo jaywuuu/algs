@@ -10,7 +10,10 @@
 
 #include "../types.h"
 
-uint64 mergeSort(int *arr, int arrSize, bool(*compare)(int, int));
-uint64 merge(int *, int, int *, int, int *, int, bool(*compare)(int, int));
+template < typename ttype >
+uint64 mergeSort(ttype *arr, int arrSize, bool(*compare)(ttype, ttype));
+
+template < typename ttype >
+uint64 merge(ttype *, int, ttype *, int, ttype *, int, bool(*compare)(ttype, ttype));
 
 #endif
