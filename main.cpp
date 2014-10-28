@@ -10,6 +10,7 @@
 #include "sorting/mergesort.h"
 #include "sorting/sort.h"
 #include "types.h"
+#include "sorting/highlow.h"
 
 using namespace std;
 
@@ -17,9 +18,10 @@ void testReadIntArray();
 void testMerge();
 void testMergeSort();
 void testReadIntArrayMergeSort();
+void testHighLow();
 
 int main() {
-
+	testHighLow();
 	return 0;
 }
 
@@ -49,7 +51,7 @@ void testMerge() {
 
 	memset(arr, 0, size * sizeof(int));
 
-	int invCount = merge(arrL, sizeL, arrR, sizeR, arr, size, SORT_ASCEND);
+	uint64 invCount = merge(arrL, sizeL, arrR, sizeR, arr, size, SORT_ASCEND);
 
 	cout << "merged array: ";
 	for (int i = 0; i < size; i++) {
@@ -64,7 +66,7 @@ void testMerge() {
 void testMergeSort() {
 	int arr[] = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
 	int size = sizeof(arr)/sizeof(int);
-	int invCount = mergeSort(arr, size, SORT_ASCEND);
+	uint64 invCount = mergeSort(arr, size, SORT_ASCEND);
 
 	cout << "sorted array: ";
 	for (int i = 0; i < size; i++) {
@@ -89,4 +91,19 @@ void testReadIntArrayMergeSort() {
 
 	cout << "total integers read: " << intCount << endl;
 	cout << "inversion count: " << invCount << endl;
+}
+
+void testHighLow() {
+	uint16 arr[] = { 10, 4, 2, 7, 5, 6, 1, 3, 8, 9 };
+	uint16 size = sizeof(arr) / sizeof(uint16);
+
+	cout << "before: ";
+	for (uint16 i = 0; i < size; i++) cout << arr[i] << " ";
+	cout << endl;
+
+	highlow(arr, size);
+
+	cout << "after: ";
+	for (uint16 i = 0; i < size; i++) cout << arr[i] << " ";
+	cout << endl;
 }
