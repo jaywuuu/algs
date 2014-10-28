@@ -64,10 +64,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="highlow.cpp" />
     <ClCompile Include="mergesort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="compare.h" />
+    <ClInclude Include="highlow.h" />
     <ClInclude Include="mergesort.h" />
     <ClInclude Include="sort.h" />
   </ItemGroup>
