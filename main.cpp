@@ -11,6 +11,7 @@
 #include "sorting/sort.h"
 #include "types.h"
 #include "sorting/highlow.h"
+#include "sorting/quicksort.h"
 
 using namespace std;
 
@@ -25,6 +26,7 @@ int testMerge();
 int testMergeSort();
 int testReadIntArrayMergeSort();
 int testHighLow();
+int testQuickSort();
 
 int main() {
 	runUnitTests();
@@ -54,7 +56,12 @@ void runUnitTests() {
 	cout << "testHighLow():               ";
 	if (testHighLow()) cout << "FAIL" << endl;
 	else cout << "OK" << endl;
-	
+
+	cout << "testQuickSort():             ";
+	if (testQuickSort()) cout << "FAIL" << endl;
+	else cout << "OK" << endl;
+
+	cout << "Tests done." << endl;
 }
 
 int testReadIntArray() {
@@ -144,6 +151,19 @@ int testHighLow() {
 			if (arr[i] > arr[i + 1]) return FAIL;
 		}
 		state = !state;
+	}
+
+	return OK;
+}
+
+int testQuickSort() {
+	int arr[] = { 10, 4, 2, 7, 5, 6, 1, 3, 8, 9 };
+	int size = sizeof(arr) / sizeof(uint16);
+	
+	quickSort(arr, size);
+
+	for (int i = 0; i < size; i++) {
+		if (arr[i] != i + 1) return FAIL;
 	}
 
 	return OK;

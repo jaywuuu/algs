@@ -27,12 +27,18 @@
     <ClInclude Include="highlow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="quicksort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mergesort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="highlow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="quicksort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

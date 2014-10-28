@@ -66,11 +66,13 @@
   <ItemGroup>
     <ClCompile Include="highlow.cpp" />
     <ClCompile Include="mergesort.cpp" />
+    <ClCompile Include="quicksort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="compare.h" />
     <ClInclude Include="highlow.h" />
     <ClInclude Include="mergesort.h" />
+    <ClInclude Include="quicksort.h" />
     <ClInclude Include="sort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
